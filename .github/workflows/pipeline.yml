@@ -1,0 +1,34 @@
+# Automatically build and test HeardIT back-end on push and pull-request
+# using GitHub Actions.
+
+name: HeardIT Frontend CICD
+
+on:
+    push:
+        branches: ["*"]
+    pull_request:
+        branches: ["*"]
+
+env:
+    # Use docker.io for Docker Hub if empty
+    REGISTRY: ghcr.io
+    IMAGE_NAME: jumorto/hearditfrontend-image:latest
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js environment
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "14"
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Build
+              run: npm run build
