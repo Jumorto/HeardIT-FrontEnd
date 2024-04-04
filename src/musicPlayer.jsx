@@ -8,13 +8,13 @@ import ProgressBar from "./progressBar.jsx"
 
 const MusicPlayer = () => {
 	const [isPlaying, setIsPlaying] = useState(false)
-	const [seconds, setSeconds] = useState() // current position of the audio in seconds
+	//const [seconds, setSeconds] = useState() // current position of the audio in seconds
 
 	// const apiUrl = "http://localhost:8080/api/music/stream" // Your backend API endpoint
 	const apiUrl =
 		"https://heardit-backend-4lxjpjjbza-ez.a.run.app/api/music/stream" // Your backend API endpoint
 
-	const [play, { pause, duration, position, sound }] = useSound(apiUrl, {
+	const [play, { pause, duration, position }] = useSound(apiUrl, {
 		format: "mp3", // Specify the audio format if needed
 	})
 

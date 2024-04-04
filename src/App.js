@@ -1,9 +1,8 @@
 import React from "react"
-import MusicPlayer from "./musicPlayer.jsx"
+// import MusicPlayer from "./musicPlayer.jsx"
 import MemoizedMusicPlayer from "./musicPlayer.jsx"
 
 function App() {
-	
 	return (
 		<div>
 			{/* Other components */}
