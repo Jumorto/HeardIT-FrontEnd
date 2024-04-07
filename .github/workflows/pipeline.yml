@@ -15,7 +15,7 @@ env:
     IMAGE_NAME: jumorto/hearditfrontend-image:latest
 
 jobs:
-    build:
+    build_and_test:
         runs-on: ubuntu-latest
 
         steps:
@@ -33,3 +33,6 @@ jobs:
               run: chmod +x node_modules/.bin/react-scripts
             - name: Build
               run: npm run build
+
+            - name: Test
+              run: npm test
