@@ -15,7 +15,6 @@ const MusicPlayer = () => {
 	})
 
 	console.log(play)
-	const [progress, setProgress] = useState(0)
 
 	useEffect(() => {
 		const interval = setInterval(() => {
