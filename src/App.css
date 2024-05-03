@@ -1,96 +1,84 @@
-/* .App {
-  text-align: center;
+.sidebar {
+	background-color: #3d3d3d;
+	color: #fff;
+	width: 100px;
+	height: 100%;
+	padding: 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar ul {
+	list-style-type: none;
+	padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar ul li {
+	margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-link {
+	text-decoration: none;
+	color: #fff;
+	background-color: #369a60;
+	width: 45px;
+	padding: 8px 16px;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-link:hover {
+	background-color: #218b49;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-body {
-	background-color: #e5e5e5;
+/* Style for the content area */
+.content {
+	margin-left: 200px; /* Adjust this value according to sidebar width */
+	padding: 20px;
 }
 
-.App {
-	font-family: sans-serif;
+.card {
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.home-page {
+	padding: 20px;
+}
+
+.card-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-gap: 20px;
+}
+
+.music-player-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 45vh; /* Adjust this as needed */
+}
+
+.music-player-content {
 	text-align: center;
 }
 
-.component {
-	background-color: white;
-	width: 25%;
-	max-width: 600px;
-	margin: 1em auto;
-	padding-bottom: 2em;
-	border: 0.1px solid black;
-	border-radius: 10px;
-}
-
-.musicCover {
-	border-radius: 10%;
-}
-
-.playButton {
-	background: none;
+.auth-button {
+	background-color: #369a60;
+	color: #ffffff;
 	border: none;
-	align-items: center;
-	justify-content: center;
+	border-radius: 4px;
+	padding: 8px 16px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
-.subTitle {
-	margin-top: -1em;
-	color: #4f4f4f;
-}
-
-.time {
-	margin: 0 auto;
-	width: 80%;
-	display: flex;
-	justify-content: space-between;
-	color: #828282;
-	font-size: smaller;
-}
-
-.timeline {
-	width: 80%;
-	background-color: #27ae60;
-}
-
-input[type="range"] {
-	background-color: #27ae60;
-}
-
-@media (max-width: 900px) {
-	.component {
-		width: 50%;
-	}
+.auth-button:hover {
+	background-color: #218b49;
 }
