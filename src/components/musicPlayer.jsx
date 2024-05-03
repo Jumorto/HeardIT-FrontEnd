@@ -17,17 +17,7 @@ const MusicPlayer = () => {
 	console.log(play)
 
 	useEffect(() => {
-		const interval = setInterval(() => {
-			// Update the progress bar position every 100 milliseconds
-			if (isPlaying && duration) {
-				// Calculate the percentage of completion for the progress bar
-				const calculatedProgress = (position / duration) * 100
-				setProgress(calculatedProgress)
-			}
-		}, 100)
-
 		// Clear the interval on component unmount
-		return () => clearInterval(interval)
 	}, [isPlaying, position, duration])
 
 	const playingButton = () => {
