@@ -67,24 +67,3 @@ const MusicPlayer = () => {
 }
 
 export default MusicPlayer
-
-// import { BiSkipNext, BiSkipPrevious } from "react-icons/bi"
-{
-	/* <button className="playButton">
-					<IconContext.Provider
-						value={{ size: "3em", color: "#27AE60" }}
-					>
-						<BiSkipPrevious />
-					</IconContext.Provider>
-				</button> */
-}
-
-{
-	/* <button className="playButton">
-					<IconContext.Provider
-						value={{ size: "3em", color: "#27AE60" }}
-					>
-						<BiSkipNext />
-					</IconContext.Provider>
-				</button> */
-}
