@@ -3,18 +3,19 @@ import useSound from "use-sound"
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai"
 import { IconContext } from "react-icons"
 
-const MusicPlayer = () => {
+const MusicPlayer = ({ song }) => {
 	const [isPlaying, setIsPlaying] = useState(false)
 
-	//const apiUrl = "http://localhost:8080/api/music/stream" // Your backend API endpoint /2
-	const apiUrl =
-		"https://heardit-backend-4lxjpjjbza-ez.a.run.app/api/music/stream" // Your backend API endpoint
+	const apiUrl = "http://localhost:8080/api/music/stream/" // + song.id // Your backend API endpoint /2
+	// const apiUrl =
+	// 	"https://heardit-backend-4lxjpjjbza-ez.a.run.app/api/music/stream" // Your backend API endpoint
 
 	const [play, { pause, duration, position }] = useSound(apiUrl, {
 		format: "mp3", // Specify the audio format if needed
 	})
 
 	console.log(play)
+	console.log(song)
 
 	useEffect(() => {
 		// Clear the interval on component unmount
@@ -39,8 +40,8 @@ const MusicPlayer = () => {
 					alt="Album cover"
 				/>
 				<div>
-					<h3 className="title">Music</h3>
-					<p className="subTitle">Song</p>
+					<h3 className="title">{song.id}</h3>
+					<h3 className="title">{song.nametrack}</h3>
 				</div>
 				<div>
 					{!isPlaying ? (
