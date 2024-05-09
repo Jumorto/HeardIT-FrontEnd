@@ -1,35 +1,7 @@
-import { useEffect, useState } from "react"
-import useSound from "use-sound"
-import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai"
-import { IconContext } from "react-icons"
+import { useState } from "react"
 
 const MusicPlayer = ({ song }) => {
-	const [isPlaying, setIsPlaying] = useState(false)
-
-	const apiUrl = "http://localhost:8080/api/music/stream/" // + song.id // Your backend API endpoint /2
-	// const apiUrl =
-	// 	"https://heardit-backend-4lxjpjjbza-ez.a.run.app/api/music/stream" // Your backend API endpoint
-
-	const [play, { pause, duration, position }] = useSound(apiUrl, {
-		format: "mp3", // Specify the audio format if needed
-	})
-
-	console.log(play)
-	console.log(song)
-
-	useEffect(() => {
-		// Clear the interval on component unmount
-	}, [isPlaying, position, duration])
-
-	const playingButton = () => {
-		if (isPlaying) {
-			pause()
-			setIsPlaying(false)
-		} else {
-			play()
-			setIsPlaying(true)
-		}
-	}
+	const [isPlaying] = useState(false)
 
 	return (
 		<div className="music-player-container">
@@ -44,23 +16,21 @@ const MusicPlayer = ({ song }) => {
 					<h3 className="title">{song.nametrack}</h3>
 				</div>
 				<div>
-					{!isPlaying ? (
-						<button className="playButton" onClick={playingButton}>
-							<IconContext.Provider
-								value={{ size: "3em", color: "#27AE60" }}
-							>
-								<AiFillPlayCircle />
-							</IconContext.Provider>
-						</button>
-					) : (
-						<button className="playButton" onClick={playingButton}>
-							<IconContext.Provider
-								value={{ size: "3em", color: "#27AE60" }}
-							>
-								<AiFillPauseCircle />
-							</IconContext.Provider>
-						</button>
-					)}
+					<audio
+						controls
+						autoPlay={isPlaying}
+						controlsList="nodownload"
+					>
+						<source
+							src={
+								"https://storage.googleapis.com/heardit_bucket/" +
+								song.nametrack +
+								".mp3"
+							}
+							type="audio/mpeg"
+						/>
+						Your browser does not support the audio element.
+					</audio>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import MemoizedMusicPlayer from "./musicPlayer.jsx"
 import Card from "./Card.jsx"
 import SearchAPI from "../apis/searchAPI.jsx"

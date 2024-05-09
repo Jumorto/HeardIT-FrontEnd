@@ -5,10 +5,12 @@ import MusicPlayer from "../components/musicPlayer.jsx"
 describe("MusicPlayer", () => {
 	it("renders correctly", () => {
 		const { getByText, getByAltText } = render(
-			<MusicPlayer song={{ id: 1, nametrack: "track1" }} />
+			<MusicPlayer
+				song={{ id: 1, nametrack: "Nine Lives - Unicorn Heads" }}
+			/>
 		)
 		expect(getByAltText("Album cover")).toBeInTheDocument()
-		expect(getByText("track1")).toBeInTheDocument()
+		expect(getByText("Nine Lives - Unicorn Heads")).toBeInTheDocument()
 		expect(getByText("1")).toBeInTheDocument()
 	})
 })
