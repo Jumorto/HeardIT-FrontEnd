@@ -4,6 +4,8 @@ import HomePage from "./components/HomePage.jsx"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Auth0Provider } from "@auth0/auth0-react"
 import "./App.css"
+import ManagePage from "./components/ManagePage.jsx"
+import UserAccount from "./components/UserAccountPage.jsx"
 
 function App() {
 	return (
@@ -19,6 +21,8 @@ function App() {
 				<div className="content">
 					<Routes>
 						<Route path="/" element={<HomePage />} />
+						<Route path="/manage" element={<ManagePage />} />
+						<Route path="/account" element={<UserAccount />} />
 					</Routes>
 				</div>
 			</Router>
