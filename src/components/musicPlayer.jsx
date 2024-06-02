@@ -23,7 +23,7 @@ const MusicPlayer = ({ song }) => {
 					>
 						<source
 							src={
-								"https://storage.googleapis.com/heardit_bucket/" +
+								"https://storage.googleapis.com/heardit-bucket-2/" +
 								song.nametrack +
 								".mp3"
 							}

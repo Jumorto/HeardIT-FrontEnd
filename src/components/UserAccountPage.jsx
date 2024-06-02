@@ -1,13 +1,13 @@
 import React from "react"
 import { useAuth0 } from "@auth0/auth0-react"
-import ManageAPI from "../apis/manageAPI"
+import RabbitAPI from "../apis/rabbitAPI"
 
 const UserAccount = () => {
 	// Example user data
 	const { user } = useAuth0()
 
 	const handleDeleteAccount = () => {
-		ManageAPI.deleteSongs(user.email)
+		RabbitAPI.deleteSongs(user.email)
 			.then((response) => {
 				console.log(response)
 				alert("Account deleted successfully!")

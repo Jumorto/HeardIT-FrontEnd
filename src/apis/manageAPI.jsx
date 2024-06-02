@@ -8,10 +8,6 @@ const ManageAPI = {
 		axios
 			.post(BASE_URL, { nameTrack: nameTrack, useremail: useremail })
 			.then((response) => response.data),
-	deleteSongs: (useremail) =>
-		axios
-			.delete(BASE_URL + "/alluseremail", { params: { useremail } })
-			.then((response) => response.data),
 	// getGoogleSignedURL: (bucketName, objectName) =>
 	// 	axios
 	// 		.get(BASE_URL + "/generateSignedUrl", {

@@ -16,6 +16,26 @@ function NavBar() {
 							Home
 						</Link>
 					</li>
+					{isAuthenticated ? (
+						<div>
+							<li> _</li>
+							<li>
+								<Link to="/manage" className="nav-link">
+									Manage
+								</Link>
+							</li>
+							<li> _</li>
+							<li>
+								<Link to="/account" className="nav-link">
+									Account
+								</Link>
+							</li>
+						</div>
+					) : (
+						<li></li>
+					)}
+
+					<li> _</li>
 					<li>
 						{isAuthenticated ? <LogoutButton /> : <LoginButton />}
 					</li>
