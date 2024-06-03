@@ -82,3 +82,66 @@
 .auth-button:hover {
 	background-color: #218b49;
 }
+
+/* TermsPopup.css */
+.popup-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}
+
+.popup-content {
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	width: 80%;
+	max-width: 600px;
+	text-align: center;
+	overflow-y: auto;
+	max-height: 80vh;
+}
+
+.accept-button {
+	margin-top: 20px;
+	padding: 10px 20px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.accept-button:hover {
+	background-color: #45a049;
+}
+
+.privacy-policy-toggle {
+	margin-top: 10px;
+	padding: 8px 15px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.privacy-policy-toggle:hover {
+	background-color: #0056b3;
+}
+
+.privacy-policy-content {
+	text-align: left;
+	margin-top: 20px;
+	max-height: 200px; /* Set a fixed height to enable scrolling */
+	overflow-y: auto; /* Enable vertical scrolling */
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
