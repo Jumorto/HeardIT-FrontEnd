@@ -9,7 +9,7 @@ const MusicPlayer = ({ song }) => {
 	const [newComment, setNewComment] = useState("")
 	const [showComments, setShowComments] = useState(false)
 
-	// Fetch comments for the song
+	// Fetch comments for song
 	useEffect(() => {
 		if (showComments) {
 			CommentAPI.getAllCommentsForSong(song.id)
@@ -23,7 +23,7 @@ const MusicPlayer = ({ song }) => {
 		}
 	}, [showComments, song.id])
 
-	// Post a new comment
+	// Post comment
 	const handleAddComment = () => {
 		if (newComment.trim() && isAuthenticated) {
 			CommentAPI.postComment(song.id, user.email, newComment)
