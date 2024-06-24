@@ -2,7 +2,7 @@ import axios from "axios"
 
 // const BASE_URL = "http://localhost:8084/api/comment"
 // const BASE_URL = "http://127.0.0.1/api/comment"
-const BASE_URL = "http://34.91.167.90/api/comment"
+const BASE_URL = "http://34.91.248.136/api/comment"
 
 const CommentAPI = {
 	getAllCommentsForSong: (idsong) =>
