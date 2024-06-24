@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { useAuth0 } from "@auth0/auth0-react"
 import RabbitAPI from "../apis/rabbitAPI"
 
 const UserAccount = () => {
-	const { user, logout } = useAuth0()
+	const { user } = useAuth0()
 
 	const handleDeleteAccount = () => {
 		RabbitAPI.deleteSongs(user.email)
